@@ -27,6 +27,12 @@ export default Em.Service.extend({
 		this.set('howl', howl);
 	},
 
+	sounds: Em.computed('howl', function() {
+		let howl = this.get('howl');
+
+		return Object.keys(howl._sprite);
+	}),
+
 	play(sound) {
 		let howl = this.get('howl');
 		howl.play(sound);

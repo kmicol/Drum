@@ -1,5 +1,9 @@
 <h1> Beat-Box</h1>
 
 
-<button onclick={{action 'play' 'clap'}}>Play Clap </button>
-<button onclick={{action 'play' 'snare'}}>Play Snare </button>
+
+
+
+{{#each audioService.sounds as |sound|}}
+	<button onmouseover={{action 'play' sound}}>Play {{sound}}</button>
+	{{/each}}
